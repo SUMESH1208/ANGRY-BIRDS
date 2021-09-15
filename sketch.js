@@ -13,7 +13,7 @@ var bg
 var score = 0
 
 function preload() {
-    bg = "sprites/bg1.png";
+    bg = "bg.png";
 }
 
 function setup(){
