@@ -46,8 +46,7 @@ function setup(){
 }
 
 function draw(){
-    if(backgroundImg)
-        background(backgroundImg);
+        background(bg);
      textSize(35)
     fill("red")    
     text("Score:" + score, width-300, 50)
@@ -92,23 +91,3 @@ function keyPressed(){
    
 }
 
-async function getTime(){
-    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Kolkata");
-    var responseJSON = await response.json();
-console.log(responseJSON)
-    var datetime = responseJSON.datetime;
-    var hour = datetime.slice(11,13);
-    console.log(datetime);
-    console.log(hour);
-    if(hour>=06 && hour<=14){
-        bg = "sprites/bg1.png";
-    }
-    if(hour>=14 && hour<=22){
-        bg = "sprites/bg2.jpg";
-    }
-    if(hour>=22 && hour<=06){
-        bg = "sprites/bg3.jpg";
-    }
-
-    backgroundImg = loadImage(bg);
-}
